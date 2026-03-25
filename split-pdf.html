@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>Split PDF Online Free — Extract Pages from PDF | Free PDF Flash</title>
+    <meta name="description" content="Split PDF files and extract specific pages or page ranges for free. 100% client-side — no uploads, no sign-up. Works offline.">
+    <meta name="keywords" content="split pdf, extract pdf pages, split pdf online free, pdf splitter, extract pages from pdf, separate pdf pages free">
+    <meta name="robots" content="index, follow">
+    <meta name="author" content="Free PDF Flash">
+    <meta property="og:title" content="Split PDF Online Free — Extract Pages from PDF">
+    <meta property="og:description" content="Extract specific pages or split a PDF into multiple parts. Free, private, no uploads.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://freepdfflash.com/split-pdf.html">
+    <link rel="canonical" href="https://freepdfflash.com/split-pdf.html">
+    <meta name="theme-color" content="#2B7A4B">
+    <link rel="manifest" href="manifest.json">
+    <link rel="icon"
+        href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📄</text></svg>">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        "name": "Free PDF Flash — Split PDF",
+        "url": "https://freepdfflash.com/split-pdf.html",
+        "applicationCategory": "UtilitiesApplication",
+        "operatingSystem": "Any (Web Browser)",
+        "description": "Extract specific pages or page ranges from any PDF file. Split every N pages. Free, client-side processing.",
+        "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+        "featureList": ["Extract page ranges", "Extract single pages", "Split every N pages", "Client-side processing", "No uploads"]
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://freepdfflash.com/"},
+            {"@type": "ListItem", "position": 2, "name": "Tools", "item": "https://freepdfflash.com/#tools"},
+            {"@type": "ListItem", "position": 3, "name": "Split PDF", "item": "https://freepdfflash.com/split-pdf.html"}
+        ]
+    }
+    </script>
+</head>
+
+<body>
+    <div class="splash-screen">
+        <div class="splash-logo"><i class="fas fa-file-pdf"></i></div>
+        <div class="splash-bar">
+            <div class="splash-bar-inner"></div>
+        </div>
+    </div>
+    <header class="header">
+        <div class="container"><a href="index.html" class="logo">
+                <div class="logo-icon"><i class="fas fa-file-pdf"></i></div>Free PDF <span>Flash</span>
+            </a>
+            <nav class="nav-links"><a href="index.html">Home</a><a href="about.html">About</a><a
+                    href="contact.html">Contact</a><a href="index.html#tools">Tools</a></nav>
+            <div style="display:flex;align-items:center;gap:8px;"><button
+                    class="menu-btn"><span></span><span></span><span></span></button></div>
+        </div>
+    </header>
+    <nav class="mobile-nav"><a href="index.html"><i class="fas fa-home"></i>Home</a><a href="about.html"><i
+                class="fas fa-info-circle"></i>About</a></nav>
+
+    <main class="tool-page">
+        <div class="container">
+            <div class="tool-hero">
+                <h1><i class="fas fa-cut" style="color:var(--primary);"></i> Split PDF</h1>
+                <p>Extract specific pages or split a PDF into multiple parts.</p>
+            </div>
+            <div class="tool-workspace">
+                <div class="drop-zone" id="dropZone">
+                    <div class="drop-zone-icon"><i class="fas fa-cloud-upload-alt"></i></div>
+                    <h3>Drop your PDF here</h3>
+                    <p>or click to browse</p>
+                    <input type="file" id="fileInput" accept=".pdf" hidden>
+                </div>
+                <div id="pdfInfo" style="display:none;margin-top:20px;">
+                    <div class="feature-item" style="margin-bottom:16px;">
+                        <div class="feature-icon"><i class="fas fa-file-pdf"></i></div>
+                        <div>
+                            <h4 id="pdfName">document.pdf</h4>
+                            <p id="pdfPages">0 pages</p>
+                        </div>
+                    </div>
+                    <div class="settings-panel">
+                        <div class="setting-group">
+                            <label for="splitMode">Split Mode</label>
+                            <select id="splitMode" onchange="toggleMode()">
+                                <option value="range">Extract Page Range</option>
+                                <option value="single">Extract Single Pages</option>
+                                <option value="every">Split Every N Pages</option>
+                            </select>
+                        </div>
+                        <div class="setting-group" id="rangeGroup">
+                            <label for="pageRange">Page Range (e.g., 1-3, 5, 8-10)</label>
+                            <input type="text" id="pageRange" placeholder="1-3, 5, 8-10">
+                        </div>
+                        <div class="setting-group" id="everyGroup" style="display:none;">
+                            <label for="everyN">Every N pages</label>
+                            <input type="number" id="everyN" value="1" min="1">
+                        </div>
+                    </div>
+                </div>
+                <div class="action-bar" id="actionBar" style="display:none;">
+                    <span></span>
+                    <button class="btn btn-primary" onclick="splitPDF()"><i class="fas fa-cut"></i> Split PDF</button>
+                </div>
+                <div class="progress-bar" id="progressBar">
+                    <div class="progress-bar-fill" id="progressFill"></div>
+                </div>
+                <div class="result-area" id="resultArea">
+                    <i class="fas fa-check-circle"></i>
+                    <h3>Split Complete!</h3>
+                    <p id="resultInfo"></p>
+                    <div id="downloadLinks"></div>
+                </div>
+            </div>
+            <div class="ad-banner">📢 Ad Space — Place your banner ad here</div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-bottom">&copy; 2026 Free PDF Flash.</div>
+        </div>
+    </footer>
+
+    <script src="https://unpkg.com/pdf-lib@1.17.1/dist/pdf-lib.min.js"></script>
+    <script src="app.js"></script>
+    <script>
+        let srcPdfBytes = null;
+        let totalPages = 0;
+        initDropZone(document.getElementById('dropZone'), document.getElementById('fileInput'), handleFile);
+
+        function handleFile(fl) {
+            const f = fl[0];
+            if (!f) return;
+            const reader = new FileReader();
+            reader.onload = async e => {
+                srcPdfBytes = new Uint8Array(e.target.result);
+                try {
+                    const pdf = await PDFLib.PDFDocument.load(srcPdfBytes);
+                    totalPages = pdf.getPageCount();
+                    document.getElementById('pdfName').textContent = f.name;
+                    document.getElementById('pdfPages').textContent = totalPages + ' pages';
+                    document.getElementById('pdfInfo').style.display = 'block';
+                    document.getElementById('actionBar').style.display = 'flex';
+                    document.getElementById('pageRange').placeholder = `1-${totalPages}`;
+                } catch (err) { showToast('Invalid PDF: ' + err.message, 'error'); }
+            };
+            reader.readAsArrayBuffer(f);
+        }
+
+        function toggleMode() {
+            const mode = document.getElementById('splitMode').value;
+            document.getElementById('rangeGroup').style.display = mode === 'every' ? 'none' : 'block';
+            document.getElementById('everyGroup').style.display = mode === 'every' ? 'block' : 'none';
+        }
+
+        function parseRange(str, max) {
+            const pages = new Set();
+            str.split(',').forEach(part => {
+                part = part.trim();
+                if (part.includes('-')) {
+                    const [a, b] = part.split('-').map(Number);
+                    for (let i = Math.max(1, a); i <= Math.min(max, b); i++) pages.add(i - 1);
+                } else {
+                    const n = parseInt(part);
+                    if (n >= 1 && n <= max) pages.add(n - 1);
+                }
+            });
+            return Array.from(pages).sort((a, b) => a - b);
+        }
+
+        async function splitPDF() {
+            if (!srcPdfBytes) return;
+            const mode = document.getElementById('splitMode').value;
+            const pb = document.getElementById('progressBar'), pf = document.getElementById('progressFill');
+            pb.classList.add('active'); pf.style.width = '0%';
+            const links = document.getElementById('downloadLinks');
+            links.innerHTML = '';
+            try {
+                const srcPdf = await PDFLib.PDFDocument.load(srcPdfBytes);
+                const blobs = [];
+
+                if (mode === 'every') {
+                    const n = parseInt(document.getElementById('everyN').value) || 1;
+                    for (let i = 0; i < totalPages; i += n) {
+                        const newPdf = await PDFLib.PDFDocument.create();
+                        const indices = [];
+                        for (let j = i; j < Math.min(i + n, totalPages); j++) indices.push(j);
+                        const pages = await newPdf.copyPages(srcPdf, indices);
+                        pages.forEach(p => newPdf.addPage(p));
+                        const bytes = await newPdf.save();
+                        blobs.push({ blob: new Blob([bytes], { type: 'application/pdf' }), name: `split-${Math.floor(i / n) + 1}.pdf` });
+                        pf.style.width = ((i + n) / totalPages * 100) + '%';
+                    }
+                } else {
+                    const rangeStr = document.getElementById('pageRange').value;
+                    if (!rangeStr) return showToast('Enter page range.', 'error');
+                    const indices = parseRange(rangeStr, totalPages);
+                    if (!indices.length) return showToast('Invalid range.', 'error');
+
+                    if (mode === 'single') {
+                        for (let i = 0; i < indices.length; i++) {
+                            const newPdf = await PDFLib.PDFDocument.create();
+                            const [p] = await newPdf.copyPages(srcPdf, [indices[i]]);
+                            newPdf.addPage(p);
+                            const bytes = await newPdf.save();
+                            blobs.push({ blob: new Blob([bytes], { type: 'application/pdf' }), name: `page-${indices[i] + 1}.pdf` });
+                            pf.style.width = ((i + 1) / indices.length * 100) + '%';
+                        }
+                    } else {
+                        const newPdf = await PDFLib.PDFDocument.create();
+                        const pages = await newPdf.copyPages(srcPdf, indices);
+                        pages.forEach(p => newPdf.addPage(p));
+                        const bytes = await newPdf.save();
+                        blobs.push({ blob: new Blob([bytes], { type: 'application/pdf' }), name: 'extracted-pages.pdf' });
+                        pf.style.width = '100%';
+                    }
+                }
+
+                blobs.forEach(b => {
+                    const btn = document.createElement('button');
+                    btn.className = 'btn btn-outline btn-sm';
+                    btn.style.margin = '4px';
+                    btn.innerHTML = `<i class="fas fa-download"></i> ${b.name}`;
+                    btn.onclick = () => { downloadBlob(b.blob, b.name); FreePDFStats.record('Split PDF'); };
+                    links.appendChild(btn);
+                });
+                document.getElementById('resultInfo').textContent = `${blobs.length} file(s) created`;
+                document.getElementById('resultArea').classList.add('show');
+                showToast('PDF split complete!', 'success');
+            } catch (err) { showToast('Error: ' + err.message, 'error'); }
+            setTimeout(() => pb.classList.remove('active'), 400);
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>Compress PDF Online Free — Reduce PDF File Size | Free PDF Flash</title>
+    <meta name="description"
+        content="Compress PDF files and reduce file size for free. Multiple compression levels — Low, Medium, High. 100% client-side, no uploads, no sign-up required.">
+    <meta name="keywords" content="compress pdf, reduce pdf size, pdf compressor, compress pdf online free, shrink pdf, make pdf smaller free">
+    <meta name="robots" content="index, follow">
+    <meta name="author" content="Free PDF Flash">
+    <meta property="og:title" content="Compress PDF Online Free — Reduce PDF File Size">
+    <meta property="og:description" content="Reduce PDF file size with multiple compression levels. Free, private, no uploads.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://freepdfflash.com/compress-pdf.html">
+    <link rel="canonical" href="https://freepdfflash.com/compress-pdf.html">
+    <meta name="theme-color" content="#2B7A4B">
+    <link rel="manifest" href="manifest.json">
+    <link rel="icon"
+        href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📄</text></svg>">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        "name": "Free PDF Flash — Compress PDF",
+        "url": "https://freepdfflash.com/compress-pdf.html",
+        "applicationCategory": "UtilitiesApplication",
+        "operatingSystem": "Any (Web Browser)",
+        "description": "Reduce PDF file size with three compression levels while preserving quality. Free, client-side processing.",
+        "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+        "featureList": ["Low compression (best quality)", "Medium compression (balanced)", "High compression (smallest size)", "Client-side processing", "No uploads"]
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://freepdfflash.com/"},
+            {"@type": "ListItem", "position": 2, "name": "Tools", "item": "https://freepdfflash.com/#tools"},
+            {"@type": "ListItem", "position": 3, "name": "Compress PDF", "item": "https://freepdfflash.com/compress-pdf.html"}
+        ]
+    }
+    </script>
+</head>
+
+<body>
+    <div class="splash-screen">
+        <div class="splash-logo"><i class="fas fa-file-pdf"></i></div>
+        <div class="splash-bar">
+            <div class="splash-bar-inner"></div>
+        </div>
+    </div>
+    <header class="header">
+        <div class="container"><a href="index.html" class="logo">
+                <div class="logo-icon"><i class="fas fa-file-pdf"></i></div>Free PDF <span>Flash</span>
+            </a>
+            <nav class="nav-links"><a href="index.html">Home</a><a href="about.html">About</a><a
+                    href="contact.html">Contact</a><a href="index.html#tools">Tools</a></nav>
+            <div style="display:flex;align-items:center;gap:8px;"><button
+                    class="menu-btn"><span></span><span></span><span></span></button></div>
+        </div>
+    </header>
+    <nav class="mobile-nav"><a href="index.html"><i class="fas fa-home"></i>Home</a><a href="about.html"><i
+                class="fas fa-info-circle"></i>About</a></nav>
+
+    <main class="tool-page">
+        <div class="container">
+            <div class="tool-hero">
+                <h1><i class="fas fa-compress-alt" style="color:var(--primary);"></i> Compress PDF</h1>
+                <p>Reduce your PDF file size while preserving quality.</p>
+            </div>
+            <div class="tool-workspace">
+                <div class="drop-zone" id="dropZone">
+                    <div class="drop-zone-icon"><i class="fas fa-cloud-upload-alt"></i></div>
+                    <h3>Drop your PDF here</h3>
+                    <p>or click to browse</p>
+                    <input type="file" id="fileInput" accept=".pdf" hidden>
+                </div>
+                <div id="fileInfo" style="display:none;margin-top:20px;">
+                    <div class="feature-item" style="margin-bottom:16px;">
+                        <div class="feature-icon"><i class="fas fa-file-pdf"></i></div>
+                        <div>
+                            <h4 id="fName">document.pdf</h4>
+                            <p id="fSize">0 KB</p>
+                        </div>
+                    </div>
+                    <div class="settings-panel">
+                        <div class="setting-group">
+                            <label for="compLevel">Compression Level</label>
+                            <select id="compLevel">
+                                <option value="low">Low (best quality)</option>
+                                <option value="medium" selected>Medium (balanced)</option>
+                                <option value="high">High (smallest size)</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="action-bar" id="actionBar" style="display:none;">
+                    <span></span>
+                    <button class="btn btn-primary" onclick="compressPDF()"><i class="fas fa-compress-alt"></i> Compress
+                        PDF</button>
+                </div>
+                <div class="progress-bar" id="progressBar">
+                    <div class="progress-bar-fill" id="progressFill"></div>
+                </div>
+                <div class="result-area" id="resultArea">
+                    <i class="fas fa-check-circle"></i>
+                    <h3>Compression Complete!</h3>
+                    <p id="resultInfo"></p>
+                    <button class="btn btn-primary" id="downloadBtn"><i class="fas fa-download"></i> Download</button>
+                </div>
+            </div>
+            <div class="ad-banner">📢 Ad Space — Place your banner ad here</div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-bottom">&copy; 2026 Free PDF Flash.</div>
+        </div>
+    </footer>
+
+    <script src="https://unpkg.com/pdf-lib@1.17.1/dist/pdf-lib.min.js"></script>
+    <script src="app.js"></script>
+    <script>
+        let srcBytes = null, origSize = 0, fileName = '';
+        initDropZone(document.getElementById('dropZone'), document.getElementById('fileInput'), handleFile);
+
+        function handleFile(fl) {
+            const f = fl[0]; if (!f) return;
+            fileName = f.name; origSize = f.size;
+            const reader = new FileReader();
+            reader.onload = e => {
+                srcBytes = new Uint8Array(e.target.result);
+                document.getElementById('fName').textContent = f.name;
+                document.getElementById('fSize').textContent = formatBytes(f.size);
+                document.getElementById('fileInfo').style.display = 'block';
+                document.getElementById('actionBar').style.display = 'flex';
+            };
+            reader.readAsArrayBuffer(f);
+        }
+
+        async function compressPDF() {
+            if (!srcBytes) return;
+            const pb = document.getElementById('progressBar'), pf = document.getElementById('progressFill');
+            pb.classList.add('active'); pf.style.width = '10%';
+            const level = document.getElementById('compLevel').value;
+            try {
+                const pdf = await PDFLib.PDFDocument.load(srcBytes, { ignoreEncryption: true });
+                pf.style.width = '40%';
+
+                /* Client-side compression strategy:
+                   - Remove metadata/info dictionary
+                   - Re-serialize with object compression (pdf-lib does UseObjectStreams) */
+                if (level === 'high' || level === 'medium') {
+                    pdf.setTitle('');
+                    pdf.setAuthor('');
+                    pdf.setSubject('');
+                    pdf.setKeywords([]);
+                    pdf.setProducer('Free PDF Flash');
+                    pdf.setCreator('Free PDF Flash');
+                }
+                pf.style.width = '70%';
+
+                const opts = {};
+                if (level === 'high') {
+                    opts.useObjectStreams = true;
+                    opts.addDefaultPage = false;
+                }
+
+                const compressedBytes = await pdf.save(opts);
+                pf.style.width = '100%';
+
+                const newSize = compressedBytes.byteLength;
+                const saved = origSize - newSize;
+                const pct = ((saved / origSize) * 100).toFixed(1);
+                const blob = new Blob([compressedBytes], { type: 'application/pdf' });
+
+                document.getElementById('resultInfo').innerHTML =
+                    `Original: <strong>${formatBytes(origSize)}</strong> → Compressed: <strong>${formatBytes(newSize)}</strong><br>` +
+                    (saved > 0 ? `Saved <strong>${formatBytes(saved)}</strong> (${pct}% reduction)` : `File was already optimized.`);
+                document.getElementById('resultArea').classList.add('show');
+                document.getElementById('downloadBtn').onclick = () => {
+                    downloadBlob(blob, 'compressed-' + fileName);
+                    FreePDFStats.record('Compress PDF');
+                };
+                showToast('Compression complete!', 'success');
+            } catch (err) { showToast('Error: ' + err.message, 'error'); }
+            setTimeout(() => pb.classList.remove('active'), 400);
+        }
+    </script>
+</body>
+
+</html>

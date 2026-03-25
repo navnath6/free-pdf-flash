@@ -1,0 +1,57 @@
+{
+  "name": "Free PDF Flash",
+  "short_name": "PDF Flash",
+  "description": "Free PDF Flash — Free online PDF tools. Convert images to PDF, merge, split, compress, edit, protect and watermark PDFs. 100% free, works offline, no uploads.",
+  "start_url": "/index.html",
+  "scope": "/",
+  "id": "/",
+  "display": "standalone",
+  "background_color": "#EFF5EC",
+  "theme_color": "#2B7A4B",
+  "orientation": "any",
+  "lang": "en",
+  "dir": "ltr",
+  "categories": ["productivity", "utilities", "education"],
+  "icons": [
+    {
+      "src": "icons/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "icons/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Image to PDF",
+      "short_name": "IMG→PDF",
+      "description": "Convert images to PDF",
+      "url": "/image-to-pdf.html",
+      "icons": [{"src": "icons/icon-192.png", "sizes": "192x192"}]
+    },
+    {
+      "name": "Merge PDF",
+      "short_name": "Merge",
+      "description": "Combine multiple PDFs",
+      "url": "/merge-pdf.html",
+      "icons": [{"src": "icons/icon-192.png", "sizes": "192x192"}]
+    },
+    {
+      "name": "Edit PDF",
+      "short_name": "Edit",
+      "description": "Add text and annotations to PDF",
+      "url": "/edit-pdf.html",
+      "icons": [{"src": "icons/icon-192.png", "sizes": "192x192"}]
+    },
+    {
+      "name": "Compress PDF",
+      "short_name": "Compress",
+      "description": "Reduce PDF file size",
+      "url": "/compress-pdf.html",
+      "icons": [{"src": "icons/icon-192.png", "sizes": "192x192"}]
+    }
+  ]
+}

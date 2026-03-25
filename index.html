@@ -1,0 +1,627 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=5.0">
+  <title>Free Image to PDF Converter Tool | Free PDF Flash — Convert, Merge, Split & More</title>
+  <meta name="description"
+    content="Free PDF Flash — the ultimate free image to PDF converter tool. Convert images to PDF, merge, split, compress, protect, watermark PDFs and more. 100% free, works offline, no uploads required.">
+  <meta name="keywords"
+    content="free image to pdf converter, pdf merge, split pdf, compress pdf, protect pdf, watermark pdf, resume builder, portfolio generator, free pdf tools">
+  <meta name="robots" content="index, follow">
+  <meta name="author" content="Free PDF Flash">
+  <meta property="og:title" content="Free Image to PDF Converter Tool | Free PDF Flash">
+  <meta property="og:description"
+    content="Convert images to PDF, merge, split, compress and protect PDFs — all free, all client-side.">
+  <meta property="og:type" content="website">
+  <meta name="theme-color" content="#2B7A4B">
+  <link rel="manifest" href="manifest.json">
+  <link rel="icon"
+    href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📄</text></svg>">
+  <link rel="canonical" href="https://freepdfflash.com/">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="styles.css">
+
+  <!-- JSON-LD Structured Data for SEO -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "Free PDF Flash",
+    "url": "https://freepdfflash.com",
+    "description": "Free online PDF tools — convert images to PDF, merge, split, compress, edit, protect and watermark PDFs. 100% free, works offline, no uploads.",
+    "potentialAction": {
+      "@type": "SearchAction",
+      "target": "https://freepdfflash.com/?q={search_term_string}",
+      "query-input": "required name=search_term_string"
+    }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Free PDF Flash",
+    "url": "https://freepdfflash.com",
+    "applicationCategory": "UtilitiesApplication",
+    "operatingSystem": "Any",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    },
+    "featureList": [
+      "Image to PDF Converter",
+      "Bulk Image Converter",
+      "Merge PDF",
+      "Split PDF",
+      "Compress PDF",
+      "Protect PDF",
+      "Watermark PDF",
+      "Edit PDF",
+      "Resume Builder",
+      "Portfolio Generator"
+    ],
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "4.8",
+      "ratingCount": "1250",
+      "bestRating": "5"
+    }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Is Free PDF Flash really free?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes! All tools are 100% free with no hidden charges, no sign-up required, and no watermarks on your files."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Are my files safe with Free PDF Flash?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Absolutely. All processing happens locally in your browser. Your files are never uploaded to any server, ensuring complete privacy."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Does Free PDF Flash work offline?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes! Free PDF Flash is a Progressive Web App (PWA). Install it and use all tools even without an internet connection."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How to edit a PDF for free?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Use our Edit PDF tool to add text, highlights, and drawings to any PDF. Upload your file, make edits, and download the modified PDF — all free and private."
+        }
+      }
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Free PDF Flash",
+    "url": "https://freepdfflash.com",
+    "logo": "https://freepdfflash.com/icons/icon-512.png",
+    "description": "Free online PDF tools — convert images to PDF, merge, split, compress, edit, protect and watermark PDFs. 100% free, works offline, no uploads.",
+    "sameAs": [
+      "https://www.facebook.com/freepdfflash",
+      "https://twitter.com/freepdfflash",
+      "https://www.instagram.com/freepdfflash",
+      "https://www.youtube.com/@freepdfflash",
+      "https://www.linkedin.com/company/freepdfflash"
+    ],
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "contactType": "customer support",
+      "url": "https://freepdfflash.com/contact.html"
+    }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://freepdfflash.com/"}
+    ]
+  }
+  </script>
+</head>
+
+<body>
+
+  <!-- Splash Screen -->
+  <div class="splash-screen" aria-hidden="true">
+    <div class="splash-logo"><i class="fas fa-file-pdf"></i></div>
+    <div class="splash-bar">
+      <div class="splash-bar-inner"></div>
+    </div>
+  </div>
+
+  <!-- Header -->
+  <header class="header" role="banner">
+    <div class="container">
+      <a href="index.html" class="logo" aria-label="Free PDF Flash Home">
+        <div class="logo-icon"><i class="fas fa-file-pdf"></i></div>
+        Free PDF <span>Flash</span>
+      </a>
+      <nav class="nav-links" aria-label="Main Navigation">
+        <a href="index.html" class="active">Home</a>
+        <a href="blog.html">Blog</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+        <a href="#tools">Tools</a>
+      </nav>
+      <div style="display:flex;align-items:center;gap:8px;">
+
+        <button class="menu-btn" aria-label="Open menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Nav -->
+  <nav class="mobile-nav" aria-label="Mobile Navigation">
+    <a href="index.html" class="active"><i class="fas fa-home"></i>Home</a>
+    <a href="about.html"><i class="fas fa-info-circle"></i>About Us</a>
+    <a href="contact.html"><i class="fas fa-envelope"></i>Contact Us</a>
+    <a href="disclaimer.html"><i class="fas fa-exclamation-triangle"></i>Disclaimer</a>
+    <a href="privacy.html"><i class="fas fa-shield-alt"></i>Privacy Policy</a>
+    <hr style="border-color:var(--divider);margin:12px 0;">
+    <a href="image-to-pdf.html"><i class="fas fa-image"></i>Image to PDF</a>
+    <a href="bulk-converter.html"><i class="fas fa-images"></i>Bulk Converter</a>
+    <a href="merge-pdf.html"><i class="fas fa-object-group"></i>Merge PDF</a>
+    <a href="split-pdf.html"><i class="fas fa-cut"></i>Split PDF</a>
+    <a href="compress-pdf.html"><i class="fas fa-compress-alt"></i>Compress PDF</a>
+    <a href="protect-pdf.html"><i class="fas fa-lock"></i>Protect PDF</a>
+    <a href="watermark-pdf.html"><i class="fas fa-tint"></i>Watermark PDF</a>
+    <a href="resume-builder.html"><i class="fas fa-id-badge"></i>Resume Builder</a>
+    <a href="portfolio-generator.html"><i class="fas fa-briefcase"></i>Portfolio Generator</a>
+  </nav>
+
+  <!-- ============================================================
+       HERO SECTION
+       ============================================================ -->
+  <section class="hero">
+    <canvas id="particle-canvas" aria-hidden="true"></canvas>
+    <div class="hero-bg-gradient"></div>
+    <div class="hero-shapes" aria-hidden="true">
+      <div class="hero-shape hero-shape--1"></div>
+      <div class="hero-shape hero-shape--2"></div>
+      <div class="hero-shape hero-shape--3"></div>
+      <div class="hero-shape hero-shape--4"></div>
+      <div class="hero-shape hero-shape--5"></div>
+    </div>
+    <div class="hero-content container">
+      <div class="hero-badge"><i class="fas fa-bolt"></i> 100% Free &amp; Client-Side</div>
+      <h1>Free Image to PDF<br><span class="text-gradient">Converter Tool</span></h1>
+      <p>Convert images, merge, split, compress, protect &amp; watermark PDFs — all inside your browser. No uploads, no
+        limits, no sign-up.</p>
+      <div class="hero-actions">
+        <a href="image-to-pdf.html" class="btn btn-primary btn-lg"><i class="fas fa-magic"></i> Start Converting</a>
+        <a href="#tools" class="btn btn-outline btn-lg"><i class="fas fa-th"></i> Explore Tools</a>
+      </div>
+      <div class="hero-stats">
+        <div class="hero-stat">
+          <div class="hero-stat-num">9+</div>
+          <div class="hero-stat-label">PDF Tools</div>
+        </div>
+        <div class="hero-stat">
+          <div class="hero-stat-num" id="stat-total">0</div>
+          <div class="hero-stat-label">Conversions</div>
+        </div>
+        <div class="hero-stat">
+          <div class="hero-stat-num" id="stat-streak">0</div>
+          <div class="hero-stat-label">Day Streak</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Ad Banner Placeholder -->
+  <div class="container">
+    <div class="ad-banner">📢 Ad Space — Place your banner ad here</div>
+  </div>
+
+  <!-- ============================================================
+       TOOLS GRID
+       ============================================================ -->
+  <section class="section" id="tools">
+    <div class="container">
+      <div class="section-header animate-on-scroll">
+        <div class="section-label"><i class="fas fa-toolbox"></i> Our Tools</div>
+        <h2 class="section-title">Powerful PDF Tools at Your Fingertips</h2>
+        <p class="section-desc">Everything you need to work with PDFs — completely free, blazing fast, and private.</p>
+      </div>
+      <div class="tools-grid stagger">
+        <!-- Tool 1 -->
+        <a href="image-to-pdf.html" class="tool-card animate-on-scroll">
+          <div class="tool-card-icon"><i class="fas fa-image"></i></div>
+          <h3>Image to PDF</h3>
+          <p>Convert JPG, PNG, WEBP images into a single, polished PDF document.</p>
+          <div class="tool-card-badge">Free</div>
+          <div class="tool-card-arrow"><i class="fas fa-arrow-right"></i></div>
+        </a>
+        <!-- Tool 2 -->
+        <a href="bulk-converter.html" class="tool-card animate-on-scroll">
+          <div class="tool-card-icon"><i class="fas fa-images"></i></div>
+          <h3>Bulk Image Converter</h3>
+          <p>Batch-convert multiple images to individual PDF files in seconds.</p>
+          <div class="tool-card-badge">Free</div>
+          <div class="tool-card-arrow"><i class="fas fa-arrow-right"></i></div>
+        </a>
+        <!-- Tool 3 -->
+        <a href="merge-pdf.html" class="tool-card animate-on-scroll">
+          <div class="tool-card-icon"><i class="fas fa-object-group"></i></div>
+          <h3>Merge PDF</h3>
+          <p>Combine multiple PDF files into one. Drag to reorder pages.</p>
+          <div class="tool-card-badge">Free</div>
+          <div class="tool-card-arrow"><i class="fas fa-arrow-right"></i></div>
+        </a>
+        <!-- Tool 4 -->
+        <a href="split-pdf.html" class="tool-card animate-on-scroll">
+          <div class="tool-card-icon"><i class="fas fa-cut"></i></div>
+          <h3>Split PDF</h3>
+          <p>Extract specific pages or page ranges from any PDF file.</p>
+          <div class="tool-card-badge">Free</div>
+          <div class="tool-card-arrow"><i class="fas fa-arrow-right"></i></div>
+        </a>
+        <!-- Tool 5 -->
+        <a href="compress-pdf.html" class="tool-card animate-on-scroll">
+          <div class="tool-card-icon"><i class="fas fa-compress-alt"></i></div>
+          <h3>Compress PDF</h3>
+          <p>Reduce PDF file size without sacrificing quality. Multiple levels.</p>
+          <div class="tool-card-badge">Free</div>
+          <div class="tool-card-arrow"><i class="fas fa-arrow-right"></i></div>
+        </a>
+        <!-- Tool 6 -->
+        <a href="protect-pdf.html" class="tool-card animate-on-scroll">
+          <div class="tool-card-icon"><i class="fas fa-lock"></i></div>
+          <h3>Protect PDF</h3>
+          <p>Add password encryption to your PDF files for extra security.</p>
+          <div class="tool-card-badge">Free</div>
+          <div class="tool-card-arrow"><i class="fas fa-arrow-right"></i></div>
+        </a>
+        <!-- Tool 7 -->
+        <a href="watermark-pdf.html" class="tool-card animate-on-scroll">
+          <div class="tool-card-icon"><i class="fas fa-tint"></i></div>
+          <h3>Watermark PDF</h3>
+          <p>Add custom text watermarks to every page of your PDF.</p>
+          <div class="tool-card-badge">Free</div>
+          <div class="tool-card-arrow"><i class="fas fa-arrow-right"></i></div>
+        </a>
+        <!-- Tool 8 -->
+        <a href="resume-builder.html" class="tool-card animate-on-scroll">
+          <div class="tool-card-icon"><i class="fas fa-id-badge"></i></div>
+          <h3>Resume Builder</h3>
+          <p>Create a professional resume and export it directly as a PDF.</p>
+          <div class="tool-card-badge">Free</div>
+          <div class="tool-card-arrow"><i class="fas fa-arrow-right"></i></div>
+        </a>
+        <!-- Tool 9 -->
+        <a href="portfolio-generator.html" class="tool-card animate-on-scroll">
+          <div class="tool-card-icon"><i class="fas fa-briefcase"></i></div>
+          <h3>Portfolio PDF Generator</h3>
+          <p>Combine images and text into a beautiful portfolio PDF.</p>
+          <div class="tool-card-badge">Free</div>
+          <div class="tool-card-arrow"><i class="fas fa-arrow-right"></i></div>
+        </a>
+        <!-- Tool 10 -->
+        <a href="edit-pdf.html" class="tool-card animate-on-scroll">
+          <div class="tool-card-icon"><i class="fas fa-edit"></i></div>
+          <h3>Edit PDF</h3>
+          <p>Add text, annotations, highlights & drawings to your existing PDF. Fix mistakes instantly!</p>
+          <div class="tool-card-badge">New</div>
+          <div class="tool-card-arrow"><i class="fas fa-arrow-right"></i></div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       FEATURES
+       ============================================================ -->
+  <section class="section" style="background:var(--bg-surface);">
+    <div class="container">
+      <div class="section-header animate-on-scroll">
+        <div class="section-label"><i class="fas fa-star"></i> Features</div>
+        <h2 class="section-title">Why Choose Free PDF Flash?</h2>
+        <p class="section-desc">Built for speed, privacy, and ease-of-use.</p>
+      </div>
+      <div class="features-grid stagger">
+        <div class="feature-item animate-on-scroll">
+          <div class="feature-icon"><i class="fas fa-shield-alt"></i></div>
+          <div>
+            <h4>100% Private</h4>
+            <p>Files never leave your device. All processing happens locally in your browser.</p>
+          </div>
+        </div>
+        <div class="feature-item animate-on-scroll">
+          <div class="feature-icon"><i class="fas fa-bolt"></i></div>
+          <div>
+            <h4>Lightning Fast</h4>
+            <p>Client-side processing means no waiting for server uploads or downloads.</p>
+          </div>
+        </div>
+        <div class="feature-item animate-on-scroll">
+          <div class="feature-icon"><i class="fas fa-wifi-slash"></i></div>
+          <div>
+            <h4>Works Offline</h4>
+            <p>Install as a PWA and use all tools even without an internet connection.</p>
+          </div>
+        </div>
+        <div class="feature-item animate-on-scroll">
+          <div class="feature-icon"><i class="fas fa-mobile-alt"></i></div>
+          <div>
+            <h4>Mobile Friendly</h4>
+            <p>Designed with a mobile-first approach. Works on phones, tablets, and desktops.</p>
+          </div>
+        </div>
+        <div class="feature-item animate-on-scroll">
+          <div class="feature-icon"><i class="fas fa-hand-pointer"></i></div>
+          <div>
+            <h4>Drag &amp; Drop</h4>
+            <p>Simply drag your files onto any tool — no file dialogs needed.</p>
+          </div>
+        </div>
+        <div class="feature-item animate-on-scroll">
+          <div class="feature-icon"><i class="fas fa-infinity"></i></div>
+          <div>
+            <h4>No Limits</h4>
+            <p>No file-size limits, no daily caps, no sign-up required.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       ACHIEVEMENTS & STATS
+       ============================================================ -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header animate-on-scroll">
+        <div class="section-label"><i class="fas fa-trophy"></i> Achievements</div>
+        <h2 class="section-title">Your Progress &amp; Badges</h2>
+        <p class="section-desc">Track your conversions and unlock achievement badges!</p>
+      </div>
+      <div class="stats-bar animate-on-scroll">
+        <div class="stat-chip"><i class="fas fa-file-pdf"></i> Total Conversions: <strong id="stat-total-2">0</strong>
+        </div>
+        <div class="stat-chip"><i class="fas fa-fire"></i> Day Streak: <strong id="stat-streak-2">0</strong></div>
+      </div>
+      <div class="badge-grid animate-on-scroll"></div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       DOWNLOAD HISTORY
+       ============================================================ -->
+  <section class="section" style="background:var(--bg-surface);">
+    <div class="container">
+      <div class="section-header animate-on-scroll">
+        <div class="section-label"><i class="fas fa-history"></i> History</div>
+        <h2 class="section-title">Recent Downloads</h2>
+        <p class="section-desc">Your download history is stored locally on your device.</p>
+      </div>
+      <div class="history-list animate-on-scroll"></div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       FAQ
+       ============================================================ -->
+  <section class="section" id="faq">
+    <div class="container">
+      <div class="section-header animate-on-scroll">
+        <div class="section-label"><i class="fas fa-question-circle"></i> FAQ</div>
+        <h2 class="section-title">Frequently Asked Questions</h2>
+      </div>
+      <div class="faq-list animate-on-scroll">
+        <div class="faq-item">
+          <div class="faq-question">Is this really free? <i class="fas fa-chevron-down"></i></div>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">Yes — 100% free with no hidden costs, no sign-up, and no daily limits. All
+              tools work completely in your browser without uploading your files anywhere.</div>
+          </div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question">Are my files safe? <i class="fas fa-chevron-down"></i></div>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">Absolutely. Your files never leave your device. All processing happens locally
+              using JavaScript — nothing is sent to any server.</div>
+          </div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question">Does it work offline? <i class="fas fa-chevron-down"></i></div>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">Yes! Install Free PDF Flash as a Progressive Web App (PWA) and all tools
+              work even without an internet connection.</div>
+          </div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question">What file formats are supported? <i class="fas fa-chevron-down"></i></div>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">For image-to-PDF conversion, we support JPG, JPEG, PNG, WEBP, GIF, and BMP.
+              For PDF tools, standard PDF files are supported.</div>
+          </div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question">Is there a file size limit? <i class="fas fa-chevron-down"></i></div>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">There's no hard limit — it depends on your device's memory. Modern devices can
+              handle files up to several hundred MB easily.</div>
+          </div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question">Can I use it on my mobile phone? <i class="fas fa-chevron-down"></i></div>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">Yes! The interface is designed mobile-first with touch-friendly elements. It
+              works perfectly on Android and iOS devices.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       ABOUT PREVIEW
+       ============================================================ -->
+  <section class="section" style="background:var(--bg-surface);">
+    <div class="container">
+      <div class="about-preview animate-on-scroll">
+        <div class="about-preview-img"><i class="fas fa-file-pdf"></i></div>
+        <div class="about-preview-content">
+          <div class="section-label"><i class="fas fa-info-circle"></i> About Us</div>
+          <h3>Built for Everyone, Free Forever</h3>
+          <p>Free PDF Flash was created with a simple mission: give everyone access to powerful PDF tools without
+            subscriptions, sign-ups, or privacy concerns. Every tool runs 100% in your browser — your files never leave
+            your device.</p>
+          <a href="about.html" class="btn btn-primary"><i class="fas fa-arrow-right"></i> Learn More</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Ad Banner -->
+  <div class="container">
+    <div class="ad-banner">📢 Ad Space — Place your banner ad here</div>
+  </div>
+
+  <!-- ============================================================
+       BLOG CTA
+       ============================================================ -->
+  <section class="section">
+    <div class="container">
+      <div class="blog-cta animate-on-scroll">
+        <h3><i class="fas fa-blog" style="color:var(--primary);margin-right:8px;"></i>From Our Blog</h3>
+        <p>Learn tips, tricks and tutorials to get the most out of your PDF tools.</p>
+        <div class="blog-preview-cards">
+          <a href="blog.html#edit-pdf-guide" class="blog-preview-card">
+            <div class="mini-tag"><i class="fas fa-edit"></i> New Feature</div>
+            <h4>Edit PDF Online Free — Add Text, Highlights & Annotations</h4>
+            <p>Fix mistakes in your PDF without regenerating it.</p>
+          </a>
+          <a href="blog.html#image-to-pdf-guide" class="blog-preview-card">
+            <div class="mini-tag"><i class="fas fa-image"></i> Guide</div>
+            <h4>How to Convert Images to PDF — Complete Guide 2025</h4>
+            <p>Step-by-step guide for perfect image-to-PDF conversion.</p>
+          </a>
+          <a href="blog.html#best-pdf-tools" class="blog-preview-card">
+            <div class="mini-tag"><i class="fas fa-trophy"></i> Comparison</div>
+            <h4>Free PDF Flash vs Paid PDF Tools — Why Free Is Better</h4>
+            <p>See how we compare to Adobe Acrobat and Smallpdf.</p>
+          </a>
+        </div>
+        <a href="blog.html" class="btn btn-primary" style="margin-top:28px;"><i class="fas fa-arrow-right"></i> Read All
+          Articles</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       FOOTER
+       ============================================================ -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <!-- Col 1 -->
+        <div class="footer-col">
+          <div class="logo" style="margin-bottom:12px;">
+            <div class="logo-icon"><i class="fas fa-file-pdf"></i></div>
+            Free PDF <span>Flash</span>
+          </div>
+          <p>Your all-in-one suite for image and PDF processing — free, private, and offline-ready. No sign-up needed.
+          </p>
+          <div class="footer-social">
+            <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+            <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+            <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+          </div>
+        </div>
+        <!-- Col 2 -->
+        <div class="footer-col">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+            <li><a href="disclaimer.html">Disclaimer</a></li>
+            <li><a href="privacy.html">Privacy Policy</a></li>
+          </ul>
+        </div>
+        <!-- Col 3 -->
+        <div class="footer-col">
+          <h4>All Tools</h4>
+          <ul>
+            <li><a href="image-to-pdf.html">Image to PDF</a></li>
+            <li><a href="bulk-converter.html">Bulk Converter</a></li>
+            <li><a href="merge-pdf.html">Merge PDF</a></li>
+            <li><a href="split-pdf.html">Split PDF</a></li>
+            <li><a href="compress-pdf.html">Compress PDF</a></li>
+            <li><a href="protect-pdf.html">Protect PDF</a></li>
+            <li><a href="watermark-pdf.html">Watermark PDF</a></li>
+            <li><a href="resume-builder.html">Resume Builder</a></li>
+            <li><a href="portfolio-generator.html">Portfolio Generator</a></li>
+          </ul>
+        </div>
+        <!-- Col 4 -->
+        <div class="footer-col">
+          <h4>Connect</h4>
+          <ul>
+            <li><a href="#"><i class="fab fa-facebook-f" style="width:18px;"></i> Facebook</a></li>
+            <li><a href="#"><i class="fab fa-twitter" style="width:18px;"></i> Twitter</a></li>
+            <li><a href="#"><i class="fab fa-instagram" style="width:18px;"></i> Instagram</a></li>
+            <li><a href="#"><i class="fab fa-youtube" style="width:18px;"></i> YouTube</a></li>
+            <li><a href="contact.html"><i class="fas fa-envelope" style="width:18px;"></i> Email Us</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">&copy; 2026 Free PDF Flash. All rights reserved. Made with ❤️ for the community.
+      </div>
+    </div>
+  </footer>
+
+  <!-- FAB -->
+  <div class="fab" aria-label="Quick actions"><i class="fas fa-plus"></i></div>
+  <div class="fab-menu">
+    <a href="image-to-pdf.html"><i class="fas fa-image"></i> Image to PDF</a>
+    <a href="merge-pdf.html"><i class="fas fa-object-group"></i> Merge PDF</a>
+    <a href="compress-pdf.html"><i class="fas fa-compress-alt"></i> Compress PDF</a>
+    <a href="resume-builder.html"><i class="fas fa-id-badge"></i> Resume Builder</a>
+  </div>
+
+  <!-- Scripts -->
+  <script src="app.js"></script>
+  <script>
+    // Sync extra stat elements
+    const t2 = document.getElementById('stat-total-2');
+    const s2 = document.getElementById('stat-streak-2');
+    if (t2) t2.textContent = FreePDFStats ? FreePDFStats.getTotal() : 0;
+    if (s2 && window.FreePDFStreak) s2.textContent = FreePDFStreak.count;
+    // Render download history on home
+    if (window.FreePDFHistory) FreePDFHistory.renderUI();
+  </script>
+</body>
+
+</html>

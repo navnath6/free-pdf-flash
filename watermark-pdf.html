@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>Add Watermark to PDF Online Free — Custom Text Watermarks | Free PDF Flash</title>
+    <meta name="description"
+        content="Add custom text watermarks to every page of your PDF for free. Control text, size, opacity, rotation, and color. 100% client-side, no uploads.">
+    <meta name="keywords" content="watermark pdf, add watermark to pdf, pdf watermark free, text watermark pdf, watermark pdf online free">
+    <meta name="robots" content="index, follow">
+    <meta name="author" content="Free PDF Flash">
+    <meta property="og:title" content="Add Watermark to PDF Online Free — Custom Text Watermarks">
+    <meta property="og:description" content="Add custom text watermarks to every page of your PDF. Free, private, no uploads.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://freepdfflash.com/watermark-pdf.html">
+    <link rel="canonical" href="https://freepdfflash.com/watermark-pdf.html">
+    <meta name="theme-color" content="#2B7A4B">
+    <link rel="manifest" href="manifest.json">
+    <link rel="icon"
+        href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📄</text></svg>">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        "name": "Free PDF Flash — Watermark PDF",
+        "url": "https://freepdfflash.com/watermark-pdf.html",
+        "applicationCategory": "UtilitiesApplication",
+        "operatingSystem": "Any (Web Browser)",
+        "description": "Add custom text watermarks to every page of a PDF. Control text, font size, opacity, rotation angle, and color.",
+        "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+        "featureList": ["Custom watermark text", "Adjustable font size", "Opacity control", "Rotation angle", "Multiple colors", "Client-side processing"]
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://freepdfflash.com/"},
+            {"@type": "ListItem", "position": 2, "name": "Tools", "item": "https://freepdfflash.com/#tools"},
+            {"@type": "ListItem", "position": 3, "name": "Watermark PDF", "item": "https://freepdfflash.com/watermark-pdf.html"}
+        ]
+    }
+    </script>
+</head>
+
+<body>
+    <div class="splash-screen">
+        <div class="splash-logo"><i class="fas fa-file-pdf"></i></div>
+        <div class="splash-bar">
+            <div class="splash-bar-inner"></div>
+        </div>
+    </div>
+    <header class="header">
+        <div class="container"><a href="index.html" class="logo">
+                <div class="logo-icon"><i class="fas fa-file-pdf"></i></div>Free PDF <span>Flash</span>
+            </a>
+            <nav class="nav-links"><a href="index.html">Home</a><a href="about.html">About</a><a
+                    href="contact.html">Contact</a><a href="index.html#tools">Tools</a></nav>
+            <div style="display:flex;align-items:center;gap:8px;"><button
+                    class="menu-btn"><span></span><span></span><span></span></button></div>
+        </div>
+    </header>
+    <nav class="mobile-nav"><a href="index.html"><i class="fas fa-home"></i>Home</a><a href="about.html"><i
+                class="fas fa-info-circle"></i>About</a></nav>
+
+    <main class="tool-page">
+        <div class="container">
+            <div class="tool-hero">
+                <h1><i class="fas fa-tint" style="color:var(--primary);"></i> Watermark PDF</h1>
+                <p>Add custom text watermarks to every page of your PDF.</p>
+            </div>
+            <div class="tool-workspace">
+                <div class="drop-zone" id="dropZone">
+                    <div class="drop-zone-icon"><i class="fas fa-cloud-upload-alt"></i></div>
+                    <h3>Drop your PDF here</h3>
+                    <p>or click to browse</p>
+                    <input type="file" id="fileInput" accept=".pdf" hidden>
+                </div>
+                <div id="fileInfo" style="display:none;margin-top:20px;">
+                    <div class="feature-item" style="margin-bottom:16px;">
+                        <div class="feature-icon"><i class="fas fa-file-pdf"></i></div>
+                        <div>
+                            <h4 id="fName">document.pdf</h4>
+                            <p id="fPages">0 pages</p>
+                        </div>
+                    </div>
+                    <div class="settings-panel">
+                        <div class="setting-group">
+                            <label for="wmText">Watermark Text</label>
+                            <input type="text" id="wmText" placeholder="CONFIDENTIAL" value="CONFIDENTIAL">
+                        </div>
+                        <div class="setting-group">
+                            <label for="wmSize">Font Size</label>
+                            <input type="number" id="wmSize" value="50" min="10" max="200">
+                        </div>
+                        <div class="setting-group">
+                            <label for="wmOpacity">Opacity</label>
+                            <input type="range" id="wmOpacity" min="0.05" max="0.5" step="0.05" value="0.15">
+                            <span id="wmOpacityVal" style="font-size:.8rem;color:var(--text-muted);">15%</span>
+                        </div>
+                        <div class="setting-group">
+                            <label for="wmRotation">Rotation (degrees)</label>
+                            <input type="number" id="wmRotation" value="-45" min="-90" max="90">
+                        </div>
+                        <div class="setting-group">
+                            <label for="wmColor">Color</label>
+                            <select id="wmColor">
+                                <option value="red">Red</option>
+                                <option value="gray" selected>Gray</option>
+                                <option value="blue">Blue</option>
+                                <option value="black">Black</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="action-bar" id="actionBar" style="display:none;">
+                    <span></span>
+                    <button class="btn btn-primary" onclick="addWatermark()"><i class="fas fa-tint"></i> Add
+                        Watermark</button>
+                </div>
+                <div class="progress-bar" id="progressBar">
+                    <div class="progress-bar-fill" id="progressFill"></div>
+                </div>
+                <div class="result-area" id="resultArea">
+                    <i class="fas fa-check-circle"></i>
+                    <h3>Watermark Added!</h3>
+                    <p id="resultInfo"></p>
+                    <button class="btn btn-primary" id="downloadBtn"><i class="fas fa-download"></i> Download</button>
+                </div>
+            </div>
+            <div class="ad-banner">📢 Ad Space — Place your banner ad here</div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-bottom">&copy; 2026 Free PDF Flash.</div>
+        </div>
+    </footer>
+
+    <script src="https://unpkg.com/pdf-lib@1.17.1/dist/pdf-lib.min.js"></script>
+    <script src="app.js"></script>
+    <script>
+        let srcBytes = null, fileName = '';
+        document.getElementById('wmOpacity').addEventListener('input', function () {
+            document.getElementById('wmOpacityVal').textContent = Math.round(this.value * 100) + '%';
+        });
+        initDropZone(document.getElementById('dropZone'), document.getElementById('fileInput'), handleFile);
+
+        function handleFile(fl) {
+            const f = fl[0]; if (!f) return;
+            fileName = f.name;
+            const reader = new FileReader();
+            reader.onload = async e => {
+                srcBytes = new Uint8Array(e.target.result);
+                try {
+                    const pdf = await PDFLib.PDFDocument.load(srcBytes);
+                    document.getElementById('fName').textContent = f.name;
+                    document.getElementById('fPages').textContent = pdf.getPageCount() + ' pages';
+                    document.getElementById('fileInfo').style.display = 'block';
+                    document.getElementById('actionBar').style.display = 'flex';
+                } catch (err) { showToast('Invalid PDF', 'error'); }
+            };
+            reader.readAsArrayBuffer(f);
+        }
+
+        async function addWatermark() {
+            if (!srcBytes) return;
+            const text = document.getElementById('wmText').value || 'WATERMARK';
+            const fontSize = parseInt(document.getElementById('wmSize').value) || 50;
+            const opacity = parseFloat(document.getElementById('wmOpacity').value) || 0.15;
+            const rotation = parseInt(document.getElementById('wmRotation').value) || -45;
+            const colorName = document.getElementById('wmColor').value;
+
+            const pb = document.getElementById('progressBar'), pf = document.getElementById('progressFill');
+            pb.classList.add('active'); pf.style.width = '10%';
+
+            try {
+                const pdf = await PDFLib.PDFDocument.load(srcBytes);
+                const font = await pdf.embedFont(PDFLib.StandardFonts.Helvetica);
+                const colors = { red: PDFLib.rgb(1, 0, 0), gray: PDFLib.rgb(0.5, 0.5, 0.5), blue: PDFLib.rgb(0, 0, 1), black: PDFLib.rgb(0, 0, 0) };
+                const color = colors[colorName] || colors.gray;
+                const pages = pdf.getPages();
+
+                for (let i = 0; i < pages.length; i++) {
+                    const page = pages[i];
+                    const { width, height } = page.getSize();
+                    const textWidth = font.widthOfTextAtSize(text, fontSize);
+                    const x = (width - textWidth * Math.cos(Math.abs(rotation) * Math.PI / 180)) / 2;
+                    const y = height / 2;
+
+                    page.drawText(text, {
+                        x, y, size: fontSize, font, color, opacity,
+                        rotate: PDFLib.degrees(rotation)
+                    });
+                    pf.style.width = ((i + 1) / pages.length * 90 + 10) + '%';
+                }
+
+                const wmBytes = await pdf.save();
+                const blob = new Blob([wmBytes], { type: 'application/pdf' });
+                document.getElementById('resultInfo').textContent = `${pages.length} pages watermarked · ${formatBytes(blob.size)}`;
+                document.getElementById('resultArea').classList.add('show');
+                document.getElementById('downloadBtn').onclick = () => {
+                    downloadBlob(blob, 'watermarked-' + fileName);
+                    FreePDFStats.record('Watermark PDF');
+                };
+                showToast('Watermark added!', 'success');
+            } catch (err) { showToast('Error: ' + err.message, 'error'); }
+            setTimeout(() => pb.classList.remove('active'), 400);
+        }
+    </script>
+</body>
+
+</html>

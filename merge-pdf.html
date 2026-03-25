@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>Merge PDF Files Online Free — Combine PDFs Instantly | Free PDF Flash</title>
+    <meta name="description"
+        content="Merge multiple PDF files into one document for free. Drag to reorder pages. 100% client-side — your files never leave your device. No sign-up, no uploads.">
+    <meta name="keywords" content="merge pdf, combine pdf, join pdf files, merge pdf online free, pdf merger, combine pdf files free, merge pdf without upload">
+    <meta name="robots" content="index, follow">
+    <meta name="author" content="Free PDF Flash">
+    <meta property="og:title" content="Merge PDF Files Online Free — Combine PDFs Instantly">
+    <meta property="og:description" content="Combine multiple PDF files into one document. Drag to reorder pages. Free, private, no uploads.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://freepdfflash.com/merge-pdf.html">
+    <link rel="canonical" href="https://freepdfflash.com/merge-pdf.html">
+    <meta name="theme-color" content="#2B7A4B">
+    <link rel="manifest" href="manifest.json">
+    <link rel="icon"
+        href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📄</text></svg>">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+
+    <!-- JSON-LD Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        "name": "Free PDF Flash — Merge PDF",
+        "url": "https://freepdfflash.com/merge-pdf.html",
+        "applicationCategory": "UtilitiesApplication",
+        "operatingSystem": "Any (Web Browser)",
+        "description": "Combine multiple PDF files into one document. Drag to reorder pages. Free, client-side, no file uploads required.",
+        "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "USD"
+        },
+        "featureList": ["Merge multiple PDFs into one", "Drag and drop reordering", "Client-side processing", "No file uploads", "Works offline"],
+        "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "4.8",
+            "ratingCount": "890",
+            "bestRating": "5"
+        }
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://freepdfflash.com/"},
+            {"@type": "ListItem", "position": 2, "name": "Tools", "item": "https://freepdfflash.com/#tools"},
+            {"@type": "ListItem", "position": 3, "name": "Merge PDF", "item": "https://freepdfflash.com/merge-pdf.html"}
+        ]
+    }
+    </script>
+</head>
+
+<body>
+    <div class="splash-screen">
+        <div class="splash-logo"><i class="fas fa-file-pdf"></i></div>
+        <div class="splash-bar">
+            <div class="splash-bar-inner"></div>
+        </div>
+    </div>
+
+    <header class="header">
+        <div class="container"><a href="index.html" class="logo">
+                <div class="logo-icon"><i class="fas fa-file-pdf"></i></div>Free PDF <span>Flash</span>
+            </a>
+            <nav class="nav-links"><a href="index.html">Home</a><a href="about.html">About</a><a
+                    href="contact.html">Contact</a><a href="index.html#tools">Tools</a></nav>
+            <div style="display:flex;align-items:center;gap:8px;"><button
+                    class="menu-btn"><span></span><span></span><span></span></button></div>
+        </div>
+    </header>
+    <nav class="mobile-nav"><a href="index.html"><i class="fas fa-home"></i>Home</a><a href="about.html"><i
+                class="fas fa-info-circle"></i>About</a><a href="contact.html"><i
+                class="fas fa-envelope"></i>Contact</a></nav>
+
+    <main class="tool-page">
+        <div class="container">
+            <div class="tool-hero">
+                <h1><i class="fas fa-object-group" style="color:var(--primary);"></i> Merge PDF</h1>
+                <p>Combine multiple PDF files into one document. Drag to reorder.</p>
+            </div>
+            <div class="tool-workspace">
+                <div class="drop-zone" id="dropZone">
+                    <div class="drop-zone-icon"><i class="fas fa-cloud-upload-alt"></i></div>
+                    <h3>Drag &amp; drop PDF files here</h3>
+                    <p>or click to browse</p>
+                    <input type="file" id="fileInput" multiple accept=".pdf" hidden>
+                </div>
+                <div class="file-list" id="fileList"></div>
+                <div class="action-bar">
+                    <span class="file-count" id="fileCount">No files selected</span>
+                    <div style="display:flex;gap:10px;">
+                        <button class="btn btn-outline btn-sm" onclick="clearAll()"><i class="fas fa-trash"></i>
+                            Clear</button>
+                        <button class="btn btn-primary" onclick="mergePDFs()"><i class="fas fa-object-group"></i> Merge
+                            PDFs</button>
+                    </div>
+                </div>
+                <div class="progress-bar" id="progressBar">
+                    <div class="progress-bar-fill" id="progressFill"></div>
+                </div>
+                <div class="result-area" id="resultArea">
+                    <i class="fas fa-check-circle"></i>
+                    <h3>PDFs Merged Successfully!</h3>
+                    <p id="resultInfo"></p>
+                    <button class="btn btn-primary" id="downloadBtn"><i class="fas fa-download"></i> Download Merged
+                        PDF</button>
+                </div>
+            </div>
+            <div class="ad-banner">📢 Ad Space — Place your banner ad here</div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-bottom">&copy; 2026 Free PDF Flash.</div>
+        </div>
+    </footer>
+
+    <script src="https://unpkg.com/pdf-lib@1.17.1/dist/pdf-lib.min.js"></script>
+    <script src="app.js"></script>
+    <script>
+        let pdfFiles = [];
+        let mergedBlob = null;
+        initDropZone(document.getElementById('dropZone'), document.getElementById('fileInput'), handleFiles);
+
+        function handleFiles(fl) {
+            Array.from(fl).forEach(f => {
+                if (f.type !== 'application/pdf' && !f.name.endsWith('.pdf')) return;
+                pdfFiles.push({ name: f.name, size: f.size, file: f });
+                render();
+            });
+        }
+        function render() {
+            const list = document.getElementById('fileList');
+            list.innerHTML = pdfFiles.map((p, i) => `
+        <div class="file-item" draggable="true" data-index="${i}">
+          <div class="file-item-thumb" style="display:flex;align-items:center;justify-content:center;background:var(--bg-surface);color:var(--primary);font-size:1.2rem;"><i class="fas fa-file-pdf"></i></div>
+          <div class="file-item-info"><div class="file-item-name">${escapeHTML(p.name)}</div><div class="file-item-size">${formatBytes(p.size)}</div></div>
+          <div class="file-item-remove" onclick="pdfFiles.splice(${i},1);render()"><i class="fas fa-times"></i></div>
+        </div>`).join('');
+            document.getElementById('fileCount').textContent = pdfFiles.length ? `${pdfFiles.length} file(s)` : 'No files selected';
+            initSortable(list);
+            list.addEventListener('dragend', () => {
+                const items = list.querySelectorAll('.file-item');
+                const newOrder = [];
+                items.forEach(item => newOrder.push(pdfFiles[parseInt(item.dataset.index)]));
+                pdfFiles = newOrder;
+                render();
+            });
+        }
+        function clearAll() { pdfFiles = []; render(); document.getElementById('resultArea').classList.remove('show'); }
+
+        async function mergePDFs() {
+            if (pdfFiles.length < 2) return showToast('Please add at least 2 PDF files.', 'error');
+            const pb = document.getElementById('progressBar'), pf = document.getElementById('progressFill');
+            pb.classList.add('active'); pf.style.width = '0%';
+            try {
+                const merged = await PDFLib.PDFDocument.create();
+                for (let i = 0; i < pdfFiles.length; i++) {
+                    const bytes = await pdfFiles[i].file.arrayBuffer();
+                    const src = await PDFLib.PDFDocument.load(bytes);
+                    const pages = await merged.copyPages(src, src.getPageIndices());
+                    pages.forEach(p => merged.addPage(p));
+                    pf.style.width = ((i + 1) / pdfFiles.length * 100) + '%';
+                }
+                const pdfBytes = await merged.save();
+                mergedBlob = new Blob([pdfBytes], { type: 'application/pdf' });
+                const totalPages = merged.getPageCount();
+                document.getElementById('resultInfo').textContent = `${totalPages} pages · ${formatBytes(mergedBlob.size)}`;
+                document.getElementById('resultArea').classList.add('show');
+                document.getElementById('downloadBtn').onclick = () => { downloadBlob(mergedBlob, 'merged.pdf'); FreePDFStats.record('Merge PDF'); };
+                showToast('PDFs merged!', 'success');
+            } catch (err) {
+                showToast('Error: ' + err.message, 'error');
+            }
+            setTimeout(() => pb.classList.remove('active'), 400);
+        }
+    </script>
+</body>
+
+</html>

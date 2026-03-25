@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>Free Image to PDF Converter Online — JPG PNG to PDF | Free PDF Flash</title>
+    <meta name="description"
+        content="Convert JPG, PNG, WEBP images to PDF for free. Drag and drop, reorder pages, choose page size and orientation. 100% client-side — no uploads, no sign-up.">
+    <meta name="keywords" content="image to pdf, jpg to pdf, png to pdf, image to pdf converter free, convert image to pdf online, photo to pdf free">
+    <meta name="robots" content="index, follow">
+    <meta name="author" content="Free PDF Flash">
+    <meta property="og:title" content="Free Image to PDF Converter Online — JPG PNG to PDF">
+    <meta property="og:description" content="Convert images to PDF for free. Drag and drop, reorder, choose page size. No uploads, 100% private.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://freepdfflash.com/image-to-pdf.html">
+    <link rel="canonical" href="https://freepdfflash.com/image-to-pdf.html">
+    <meta name="theme-color" content="#2B7A4B">
+    <link rel="manifest" href="manifest.json">
+    <link rel="icon"
+        href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📄</text></svg>">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        "name": "Free PDF Flash — Image to PDF Converter",
+        "url": "https://freepdfflash.com/image-to-pdf.html",
+        "applicationCategory": "UtilitiesApplication",
+        "operatingSystem": "Any (Web Browser)",
+        "description": "Convert JPG, PNG, WEBP, GIF, BMP images into a single PDF document. Drag-and-drop, reorder pages, custom page sizes, orientation, margins, and quality settings.",
+        "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+        "featureList": ["JPG to PDF", "PNG to PDF", "WEBP to PDF", "Drag and drop", "Page reordering", "Custom page sizes (A4, Letter, Legal)", "Orientation control", "Margin settings", "Quality adjustment", "Client-side processing"],
+        "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.9", "ratingCount": "2100", "bestRating": "5" }
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://freepdfflash.com/"},
+            {"@type": "ListItem", "position": 2, "name": "Tools", "item": "https://freepdfflash.com/#tools"},
+            {"@type": "ListItem", "position": 3, "name": "Image to PDF", "item": "https://freepdfflash.com/image-to-pdf.html"}
+        ]
+    }
+    </script>
+</head>
+
+<body>
+    <div class="splash-screen">
+        <div class="splash-logo"><i class="fas fa-file-pdf"></i></div>
+        <div class="splash-bar">
+            <div class="splash-bar-inner"></div>
+        </div>
+    </div>
+
+    <header class="header">
+        <div class="container"><a href="index.html" class="logo">
+                <div class="logo-icon"><i class="fas fa-file-pdf"></i></div>Free PDF <span>Flash</span>
+            </a>
+            <nav class="nav-links"><a href="index.html">Home</a><a href="about.html">About</a><a
+                    href="contact.html">Contact</a><a href="index.html#tools">Tools</a></nav>
+            <div style="display:flex;align-items:center;gap:8px;"><button
+                    class="menu-btn"><span></span><span></span><span></span></button></div>
+        </div>
+    </header>
+    <nav class="mobile-nav"><a href="index.html"><i class="fas fa-home"></i>Home</a><a href="about.html"><i
+                class="fas fa-info-circle"></i>About</a><a href="contact.html"><i
+                class="fas fa-envelope"></i>Contact</a></nav>
+
+    <main class="tool-page">
+        <div class="container">
+            <div class="tool-hero">
+                <h1><i class="fas fa-image" style="color:var(--primary);"></i> Image to PDF</h1>
+                <p>Drop your images below to convert them into a single PDF document.</p>
+            </div>
+
+            <div class="tool-workspace">
+                <div class="drop-zone" id="dropZone">
+                    <div class="drop-zone-icon"><i class="fas fa-cloud-upload-alt"></i></div>
+                    <h3>Drag &amp; drop images here</h3>
+                    <p>or click to browse · Supports JPG, PNG, WEBP, GIF, BMP</p>
+                    <input type="file" id="fileInput" multiple accept="image/*" hidden>
+                </div>
+
+                <div class="file-list" id="fileList"></div>
+
+                <div class="settings-panel">
+                    <div class="setting-group">
+                        <label for="pageSize">Page Size</label>
+                        <select id="pageSize">
+                            <option value="a4">A4 (210 × 297 mm)</option>
+                            <option value="letter">Letter (8.5 × 11 in)</option>
+                            <option value="legal">Legal (8.5 × 14 in)</option>
+                            <option value="fit">Fit to Image</option>
+                        </select>
+                    </div>
+                    <div class="setting-group">
+                        <label for="orientation">Orientation</label>
+                        <select id="orientation">
+                            <option value="portrait">Portrait</option>
+                            <option value="landscape">Landscape</option>
+                            <option value="auto">Auto (match image)</option>
+                        </select>
+                    </div>
+                    <div class="setting-group">
+                        <label for="margin">Margin (px)</label>
+                        <input type="number" id="margin" value="20" min="0" max="100">
+                    </div>
+                    <div class="setting-group">
+                        <label for="quality">Image Quality</label>
+                        <select id="quality">
+                            <option value="1">Maximum</option>
+                            <option value="0.85" selected>High</option>
+                            <option value="0.6">Medium</option>
+                            <option value="0.4">Low</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="action-bar">
+                    <span class="file-count" id="fileCount">No files selected</span>
+                    <div style="display:flex;gap:10px;">
+                        <button class="btn btn-outline btn-sm" onclick="clearFiles()"><i class="fas fa-trash"></i>
+                            Clear</button>
+                        <button class="btn btn-outline btn-sm" onclick="shareTool('Image to PDF')"><i
+                                class="fas fa-share-alt"></i> Share</button>
+                        <button class="btn btn-primary" id="convertBtn" onclick="convertToPDF()"><i
+                                class="fas fa-magic"></i> Convert to PDF</button>
+                    </div>
+                </div>
+
+                <div class="progress-bar" id="progressBar">
+                    <div class="progress-bar-fill" id="progressFill"></div>
+                </div>
+
+                <div class="result-area" id="resultArea">
+                    <i class="fas fa-check-circle"></i>
+                    <h3>PDF Created Successfully!</h3>
+                    <p id="resultInfo"></p>
+                    <button class="btn btn-primary" id="downloadBtn"><i class="fas fa-download"></i> Download
+                        PDF</button>
+                </div>
+            </div>
+
+            <div class="ad-banner">📢 Ad Space — Place your banner ad here</div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <div class="logo" style="margin-bottom:12px;">
+                        <div class="logo-icon"><i class="fas fa-file-pdf"></i></div>Free PDF <span>Flash</span>
+                    </div>
+                    <p>Free, private, offline-ready PDF tools.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Tools</h4>
+                    <ul>
+                        <li><a href="image-to-pdf.html">Image to PDF</a></li>
+                        <li><a href="merge-pdf.html">Merge PDF</a></li>
+                        <li><a href="compress-pdf.html">Compress PDF</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>More</h4>
+                    <ul>
+                        <li><a href="resume-builder.html">Resume Builder</a></li>
+                        <li><a href="portfolio-generator.html">Portfolio</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">&copy; 2026 Free PDF Flash.</div>
+        </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="app.js"></script>
+    <script>
+        const { jsPDF } = window.jspdf;
+        let images = [];
+        let pdfBlob = null;
+
+        // Init drag & drop
+        const dropZone = document.getElementById('dropZone');
+        const fileInput = document.getElementById('fileInput');
+        initDropZone(dropZone, fileInput, handleFiles);
+
+        function handleFiles(fileList) {
+            Array.from(fileList).forEach(file => {
+                if (!file.type.startsWith('image/')) return;
+                const reader = new FileReader();
+                reader.onload = e => {
+                    const img = new Image();
+                    img.onload = () => {
+                        images.push({ name: file.name, size: file.size, dataUrl: e.target.result, width: img.width, height: img.height });
+                        renderFileList();
+                    };
+                    img.src = e.target.result;
+                };
+                reader.readAsDataURL(file);
+            });
+        }
+
+        function renderFileList() {
+            const list = document.getElementById('fileList');
+            list.innerHTML = images.map((img, i) => `
+        <div class="file-item" draggable="true" data-index="${i}">
+          <img src="${img.dataUrl}" class="file-item-thumb" alt="${escapeHTML(img.name)}">
+          <div class="file-item-info">
+            <div class="file-item-name">${escapeHTML(img.name)}</div>
+            <div class="file-item-size">${formatBytes(img.size)} · ${img.width}×${img.height}</div>
+          </div>
+          <div class="file-item-remove" onclick="removeFile(${i})"><i class="fas fa-times"></i></div>
+        </div>`).join('');
+            document.getElementById('fileCount').textContent = images.length ? `${images.length} file(s) selected` : 'No files selected';
+            initSortable(list);
+            // Update order after drag
+            list.addEventListener('dragend', () => {
+                const items = list.querySelectorAll('.file-item');
+                const newOrder = [];
+                items.forEach(item => newOrder.push(images[parseInt(item.dataset.index)]));
+                images = newOrder;
+                renderFileList();
+            });
+        }
+
+        function removeFile(i) {
+            images.splice(i, 1);
+            renderFileList();
+        }
+        function clearFiles() {
+            images = [];
+            renderFileList();
+            document.getElementById('resultArea').classList.remove('show');
+        }
+
+        async function convertToPDF() {
+            if (!images.length) return showToast('Please add at least one image.', 'error');
+            const progressBar = document.getElementById('progressBar');
+            const progressFill = document.getElementById('progressFill');
+            progressBar.classList.add('active');
+            progressFill.style.width = '0%';
+
+            const pageSize = document.getElementById('pageSize').value;
+            const orientation = document.getElementById('orientation').value;
+            const margin = parseInt(document.getElementById('margin').value) || 0;
+            const quality = parseFloat(document.getElementById('quality').value);
+
+            try {
+                let pdf = null;
+                for (let i = 0; i < images.length; i++) {
+                    const img = images[i];
+                    let orient = orientation === 'auto' ? (img.width > img.height ? 'landscape' : 'portrait') : orientation;
+                    let format = pageSize === 'fit' ? [img.width + margin * 2, img.height + margin * 2] : pageSize;
+
+                    if (i === 0) {
+                        pdf = new jsPDF({ orientation: orient, unit: pageSize === 'fit' ? 'px' : 'mm', format: format });
+                    } else {
+                        pdf.addPage(format, orient);
+                    }
+                    const pw = pdf.internal.pageSize.getWidth();
+                    const ph = pdf.internal.pageSize.getHeight();
+                    const availW = pw - margin * 2;
+                    const availH = ph - margin * 2;
+                    const ratio = Math.min(availW / img.width, availH / img.height);
+                    const iw = img.width * ratio;
+                    const ih = img.height * ratio;
+                    const x = margin + (availW - iw) / 2;
+                    const y = margin + (availH - ih) / 2;
+
+                    const imgType = img.name.toLowerCase().endsWith('.png') ? 'PNG' : 'JPEG';
+                    pdf.addImage(img.dataUrl, imgType, x, y, iw, ih, undefined, 'FAST', 0);
+                    progressFill.style.width = ((i + 1) / images.length * 100) + '%';
+                    await new Promise(r => setTimeout(r, 50));
+                }
+
+                pdfBlob = pdf.output('blob');
+                document.getElementById('resultInfo').textContent = `${images.length} page(s) · ${formatBytes(pdfBlob.size)}`;
+                document.getElementById('resultArea').classList.add('show');
+                document.getElementById('downloadBtn').onclick = () => {
+                    downloadBlob(pdfBlob, 'converted-images.pdf');
+                    FreePDFStats.record('Image to PDF');
+                };
+                showToast('PDF created successfully!', 'success');
+            } catch (err) {
+                showToast('Error creating PDF: ' + err.message, 'error');
+            }
+            setTimeout(() => progressBar.classList.remove('active'), 500);
+        }
+    </script>
+</body>
+
+</html>

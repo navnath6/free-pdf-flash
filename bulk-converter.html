@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>Bulk Image to PDF Converter Free — Batch Convert Images | Free PDF Flash</title>
+    <meta name="description"
+        content="Batch-convert multiple images into individual PDF files for free. Each image becomes its own PDF. 100% client-side, no uploads, no sign-up.">
+    <meta name="keywords" content="bulk image to pdf, batch convert images to pdf, multiple images to pdf free, bulk pdf converter online">
+    <meta name="robots" content="index, follow">
+    <meta name="author" content="Free PDF Flash">
+    <meta property="og:title" content="Bulk Image to PDF Converter Free — Batch Convert Images">
+    <meta property="og:description" content="Batch-convert multiple images into individual PDF files. Free, private, no uploads.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://freepdfflash.com/bulk-converter.html">
+    <link rel="canonical" href="https://freepdfflash.com/bulk-converter.html">
+    <meta name="theme-color" content="#2B7A4B">
+    <link rel="manifest" href="manifest.json">
+    <link rel="icon"
+        href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📄</text></svg>">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        "name": "Free PDF Flash — Bulk Image Converter",
+        "url": "https://freepdfflash.com/bulk-converter.html",
+        "applicationCategory": "UtilitiesApplication",
+        "operatingSystem": "Any (Web Browser)",
+        "description": "Batch-convert multiple images to individual PDF files in seconds. Each image becomes its own PDF document.",
+        "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+        "featureList": ["Batch conversion", "Individual PDFs per image", "Drag and drop", "Client-side processing", "No uploads"]
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://freepdfflash.com/"},
+            {"@type": "ListItem", "position": 2, "name": "Tools", "item": "https://freepdfflash.com/#tools"},
+            {"@type": "ListItem", "position": 3, "name": "Bulk Converter", "item": "https://freepdfflash.com/bulk-converter.html"}
+        ]
+    }
+    </script>
+</head>
+
+<body>
+    <div class="splash-screen">
+        <div class="splash-logo"><i class="fas fa-file-pdf"></i></div>
+        <div class="splash-bar">
+            <div class="splash-bar-inner"></div>
+        </div>
+    </div>
+
+    <header class="header">
+        <div class="container"><a href="index.html" class="logo">
+                <div class="logo-icon"><i class="fas fa-file-pdf"></i></div>Free PDF <span>Flash</span>
+            </a>
+            <nav class="nav-links"><a href="index.html">Home</a><a href="about.html">About</a><a
+                    href="contact.html">Contact</a><a href="index.html#tools">Tools</a></nav>
+            <div style="display:flex;align-items:center;gap:8px;"><button
+                    class="menu-btn"><span></span><span></span><span></span></button></div>
+        </div>
+    </header>
+    <nav class="mobile-nav"><a href="index.html"><i class="fas fa-home"></i>Home</a><a href="about.html"><i
+                class="fas fa-info-circle"></i>About</a><a href="contact.html"><i
+                class="fas fa-envelope"></i>Contact</a></nav>
+
+    <main class="tool-page">
+        <div class="container">
+            <div class="tool-hero">
+                <h1><i class="fas fa-images" style="color:var(--primary);"></i> Bulk Image Converter</h1>
+                <p>Convert multiple images to individual PDF files in one go.</p>
+            </div>
+            <div class="tool-workspace">
+                <div class="drop-zone" id="dropZone">
+                    <div class="drop-zone-icon"><i class="fas fa-cloud-upload-alt"></i></div>
+                    <h3>Drag &amp; drop images here</h3>
+                    <p>Each image will become its own PDF</p>
+                    <input type="file" id="fileInput" multiple accept="image/*" hidden>
+                </div>
+                <div class="file-list" id="fileList"></div>
+                <div class="action-bar">
+                    <span class="file-count" id="fileCount">No files selected</span>
+                    <div style="display:flex;gap:10px;">
+                        <button class="btn btn-outline btn-sm" onclick="clearAll()"><i class="fas fa-trash"></i>
+                            Clear</button>
+                        <button class="btn btn-primary" onclick="bulkConvert()"><i class="fas fa-magic"></i> Convert
+                            All</button>
+                    </div>
+                </div>
+                <div class="progress-bar" id="progressBar">
+                    <div class="progress-bar-fill" id="progressFill"></div>
+                </div>
+                <div class="result-area" id="resultArea">
+                    <i class="fas fa-check-circle"></i>
+                    <h3>All PDFs Ready!</h3>
+                    <p id="resultInfo"></p>
+                    <div id="downloadLinks"></div>
+                </div>
+            </div>
+            <div class="ad-banner">📢 Ad Space — Place your banner ad here</div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-bottom">&copy; 2026 Free PDF Flash.</div>
+        </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="app.js"></script>
+    <script>
+        const { jsPDF } = window.jspdf;
+        let images = [];
+        initDropZone(document.getElementById('dropZone'), document.getElementById('fileInput'), handleFiles);
+
+        function handleFiles(fl) {
+            Array.from(fl).forEach(f => {
+                if (!f.type.startsWith('image/')) return;
+                const reader = new FileReader();
+                reader.onload = e => {
+                    const img = new Image();
+                    img.onload = () => { images.push({ name: f.name, size: f.size, dataUrl: e.target.result, w: img.width, h: img.height }); render(); };
+                    img.src = e.target.result;
+                };
+                reader.readAsDataURL(f);
+            });
+        }
+        function render() {
+            document.getElementById('fileList').innerHTML = images.map((m, i) => `
+        <div class="file-item">
+          <img src="${m.dataUrl}" class="file-item-thumb">
+          <div class="file-item-info"><div class="file-item-name">${escapeHTML(m.name)}</div><div class="file-item-size">${formatBytes(m.size)}</div></div>
+          <div class="file-item-remove" onclick="images.splice(${i},1);render()"><i class="fas fa-times"></i></div>
+        </div>`).join('');
+            document.getElementById('fileCount').textContent = images.length ? `${images.length} file(s)` : 'No files selected';
+        }
+        function clearAll() { images = []; render(); document.getElementById('resultArea').classList.remove('show'); }
+
+        async function bulkConvert() {
+            if (!images.length) return showToast('Add images first.', 'error');
+            const pb = document.getElementById('progressBar'), pf = document.getElementById('progressFill');
+            pb.classList.add('active'); pf.style.width = '0%';
+            const links = document.getElementById('downloadLinks');
+            links.innerHTML = '';
+            const blobs = [];
+            for (let i = 0; i < images.length; i++) {
+                const m = images[i];
+                const orient = m.w > m.h ? 'landscape' : 'portrait';
+                const pdf = new jsPDF({ orientation: orient, unit: 'px', format: [m.w, m.h] });
+                const t = m.name.toLowerCase().endsWith('.png') ? 'PNG' : 'JPEG';
+                pdf.addImage(m.dataUrl, t, 0, 0, m.w, m.h);
+                const blob = pdf.output('blob');
+                const pdfName = m.name.replace(/\.[^.]+$/, '') + '.pdf';
+                blobs.push({ blob, name: pdfName });
+                pf.style.width = ((i + 1) / images.length * 100) + '%';
+                await new Promise(r => setTimeout(r, 30));
+            }
+            blobs.forEach(b => {
+                const btn = document.createElement('button');
+                btn.className = 'btn btn-outline btn-sm';
+                btn.style.margin = '4px';
+                btn.innerHTML = `<i class="fas fa-download"></i> ${b.name}`;
+                btn.onclick = () => { downloadBlob(b.blob, b.name); FreePDFStats.record('Bulk Converter'); };
+                links.appendChild(btn);
+            });
+            document.getElementById('resultInfo').textContent = `${blobs.length} PDF(s) created`;
+            document.getElementById('resultArea').classList.add('show');
+            showToast(`${blobs.length} PDFs created!`, 'success');
+            setTimeout(() => pb.classList.remove('active'), 400);
+        }
+    </script>
+</body>
+
+</html>

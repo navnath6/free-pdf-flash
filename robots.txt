@@ -6,6 +6,7 @@ Allow: /
 
 # Sitemap
 Sitemap: https://freepdfflash.com/sitemap.xml
+Sitemap: https://navnath6.github.io/free-pdf-flash/sitemap.xml
 
 # LLM Reference File
 # LLMs can read this file to understand our site and tools

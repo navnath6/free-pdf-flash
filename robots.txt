@@ -1,16 +1,15 @@
 # Free PDF Flash — robots.txt
-# https://freepdfflash.com
+# https://navnath6.github.io/free-pdf-flash/
 
 User-agent: *
 Allow: /
 
 # Sitemap
-Sitemap: https://freepdfflash.com/sitemap.xml
 Sitemap: https://navnath6.github.io/free-pdf-flash/sitemap.xml
 
 # LLM Reference File
 # LLMs can read this file to understand our site and tools
-# See: https://freepdfflash.com/llms.txt
+# See: https://navnath6.github.io/free-pdf-flash/llms.txt
 
 # Allow all major LLM crawlers
 User-agent: GPTBot
